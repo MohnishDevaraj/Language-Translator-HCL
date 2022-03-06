@@ -65,7 +65,16 @@ def voice():
 
 @app.route("/country", methods=['POST', 'GET'])
 def country():
-    return render_template("Country-Language.html")
+    if request.method == 'POST':
+        try:
+            country = request.form["select-language"].lower
+            print(country)
+            return render_template('Country-Language.html', Country=country)
+        except:
+            error = "Error"
+            return render_template('Country-Language.html', Country=error)
+    return render_template('Country-Language.html')
+    # return render_template("Country-Language.html")
 
 
 @app.route("/profile")

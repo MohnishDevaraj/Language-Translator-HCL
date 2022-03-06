@@ -15,7 +15,7 @@
     <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
         <div class="container"><a class="navbar-brand" href="#"><span>Language Translator</span> </a>
             <div class="collapse navbar-collapse" id="navcol-1"></div><a href="/text">Text</a>
-            <div class="navbar-collapse" id=""></div><a href="/voice">Voice</a>
+            <div class="navbar-collapse" id=""></div><a href="/voice">Document</a>
             <div class="navbar-collapse" id=""></div><a href="/country">Country-Language</a>
             <div class="navbar-collapse" id=""></div><a href="/profile">Profile</a>
         </div>
@@ -35,8 +35,8 @@
                     <form method="POST" class="justify-content-center">
                         <!-- Enter text to translate. -->
                         <div class="form-group justify-content-center">
-                            <label for="text-to-translate"><strong>Enter the Country:</strong></label>
-                            <select class="form-control row text-center justify-content-center" name="select-language" id="select-language">
+                            <label for="country-to-translate"><strong>Enter the Country:</strong></label>
+                            <!--<select class="form-control row text-center justify-content-center" name="select-language" id="select-language">
                                 <option value="">Select Country</option>
                                 <option value="ar">Arabic</option>
                                 <option value="ca">Catalan</option>
@@ -58,9 +58,9 @@
                                 <option value="th">Thai</option>
                                 <option value="tr">Turkish</option>
                                 <option value="vi">Vietnamese</option>
-                            </select>
-                            <!--<textarea class="form-control" name="text-to-translate" id="text-to-translate"
-                                rows="5"></textarea>-->
+                            </select>-->
+                            <textarea class="form-control" name="text-to-translate" id="text-to-translate"
+                                rows="5"></textarea>
                         </div>
                         <!-- Select output language here. -->
                         <div class="form-group text-center">
@@ -88,8 +88,8 @@
                                 <option value="tr">Turkish</option>
                                 <option value="vi">Vietnamese</option>
                             </select>-->
-                            <textarea class="form-control row justify-content-center" name="text-to-translate" id="text-to-translate"
-                                rows="5"></textarea>
+                            <textarea class="form-control row justify-content-center" name="country-to-translate" id="text-to-translate"
+                                rows="5">{{ Country }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mb-2" id="translate">Search</button></br>
                         </br>
