@@ -58,31 +58,49 @@ def home():
     return render_template("text.html")
 
 
-@ app.route("/voice")
-def voice():
-    return render_template("Voice.html")
+# def country():
 
 
-@ app.route("/country", methods=['POST', 'GET'])
+# @app.route("/country")
+# def country():
+#     # if request.method == 'POST':
+#     #     try:
+#     #         count = request.form["select-translate"].lower()
+#     #         print(count)
+#     #         return render_template('Country-Language.html', Country_Lang=count)
+#     #     except:
+#     #         error = "Error"
+#     #         return render_template('Country-Language.html', Country_Lang=error)
+#     # return render_template('Country-Language.html')
+
+#     return render_template("Country-Language.html")
+
+
+@app.route("/document")
+def document():
+    return render_template("Document.html")
+
+
+@app.route("/country", methods=['POST', 'GET'])
 def country():
     if request.method == 'POST':
         try:
-            country = request.form["select-language"].lower
-            print(country)
-            return render_template('Country-Language.html', Country=country)
+            count = request.form.get["country-to-translate"].lower()
+            print(count)
+            return render_template('Country-Language.html', text_to_translate=count)
         except:
-            error = "Error"
-            return render_template('Country-Language.html', Country=error)
+            error = "Error not able to get country"
+            return render_template('Country-Language.html', text_to_translate=error)
     return render_template('Country-Language.html')
     # return render_template("Country-Language.html")
 
 
-@ app.route("/profile")
+@app.route("/profile")
 def profile():
     return render_template("Profile.html")
 
 
-@ app.route("/text")
+@app.route("/text")
 def text():
     return render_template("Text.html")
 
