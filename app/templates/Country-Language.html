@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>lt</title>
+    <title>Language Translator</title>
     <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navcol-1"></div><a href="/text">Text</a>
             <div class="navbar-collapse" id=""></div><a href="/document">Document</a>
             <div class="navbar-collapse" id=""></div><a href="/country">Country-Language</a>
-            <div class="navbar-collapse" id=""></div><a href="/profile">Profile</a>
+            <div class="navbar-collapse" id=""></div><a href="/Feedback">Feedback</a>
         </div>
     </nav>
     <div class="features-blue" style="height:157px;">
@@ -36,58 +36,12 @@
                         <!-- Enter text to translate. -->
                         <div class="form-group justify-content-center">
                             <label for="country-to-translate"><strong>Enter the Country:</strong></label>
-                            <!--<select class="form-control row text-center justify-content-center" name="text-to-translate" id="stext-to-translate">
-                                <option value="">Select Country</option>
-                                <option value="ar">Arabic</option>
-                                <option value="ca">Catalan</option>
-                                <option value="zh-Hans">Chinese (Simplified)</option>
-                                <option value="zh-Hant">Chinese (Traditional)</option>
-                                <option value="hr">Croatian</option>
-                                <option value="en">English</option>
-                                <option value="fr">French</option>
-                                <option value="de">German</option>
-                                <option value="el">Greek</option>
-                                <option value="he">Hebrew</option>
-                                <option value="hi">Hindi</option>
-                                <option value="it">Italian</option>
-                                <option value="ja">Japanese</option>
-                                <option value="ko">Korean</option>
-                                <option value="pt">Portuguese</option>
-                                <option value="ru">Russian</option>
-                                <option value="es">Spanish</option>
-                                <option value="th">Thai</option>
-                                <option value="tr">Turkish</option>
-                                <option value="vi">Vietnamese</option>
-                            </select>-->
                             <textarea class="form-control" name="country-to-translate" id="country-to-translate"
                                 rows="5"></textarea>
                         </div>
                         <!-- Select output language here. -->
                         <div class="form-group text-center">
                             <label for="select-language text-center"><strong>Language Spoken:</strong></label>
-                            <!--<select class="form-control" name="select-language" id="select-language">
-                                <option value="">Select Language</option>
-                                <option value="ar">Arabic</option>
-                                <option value="ca">Catalan</option>
-                                <option value="zh-Hans">Chinese (Simplified)</option>
-                                <option value="zh-Hant">Chinese (Traditional)</option>
-                                <option value="hr">Croatian</option>
-                                <option value="en">English</option>
-                                <option value="fr">French</option>
-                                <option value="de">German</option>
-                                <option value="el">Greek</option>
-                                <option value="he">Hebrew</option>
-                                <option value="hi">Hindi</option>
-                                <option value="it">Italian</option>
-                                <option value="ja">Japanese</option>
-                                <option value="ko">Korean</option>
-                                <option value="pt">Portuguese</option>
-                                <option value="ru">Russian</option>
-                                <option value="es">Spanish</option>
-                                <option value="th">Thai</option>
-                                <option value="tr">Turkish</option>
-                                <option value="vi">Vietnamese</option>
-                            </select>-->
                             <textarea class="form-control row justify-content-center" readonly name="text-to-translate" id="text-to-translate"
                                 rows="5">{{text_to_translate}}</textarea>
                         </div>
