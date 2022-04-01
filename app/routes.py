@@ -1,5 +1,5 @@
-#from lib2to3.pgen2 import driver
 from flask import Flask, request, render_template
+from app import app
 # import googletrans
 # from googletrans import Translator
 
@@ -7,15 +7,16 @@ import time
 from selenium import webdriver
 import selenium
 
-app = Flask(__name__)
-app.config["SECRET_KEY"] = 'f9958bdaed7ba25babd76944734887d6'
+
 # translator = Translator()
 
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
+
         input1 = request.form["text-to-translate"].lower()
+        input1.split()
         print(input1)
         # selected_language = request.form["select-language"]webdriver
         # to_lang = translator.detect(text_to_translate)
@@ -34,28 +35,27 @@ def home():
 
         # launch browser with selenium:=>
         browser = webdriver.Chrome(
-            r"C:\\Users\\devar\\Downloads\\chromedriver_win32\\chromedriver.exe")
+            r"C:\Users\devar\Downloads\chromedriver_win32\chromedriver.exe")
 
         # copy google Translator link here:=>
         browser.get("https://translate.google.co.in/?sl=auto&tl=" +
                     lang_code+"&text="+input1+"&op=translate")
 
         # just wait for some time for translating input text:=>
-        time.sleep(1)
+        time.sleep(6)
 
         # Given below x path contains the translated output that we are storing in output variable:=>
-        output1 = browser.find_element_by_name('er8xn').text
-        #output1 = browser.find_element_by_Xpath('/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[3]/c-wiz[2]/div[6]/div/div[1]/span[1]/span/span')
+        output1 = browser.find_element_by_class_name("VIiyi").text
         print(output1)
 
         # Display the output:=>
         # , translation_result=output1)
         return render_template('text.html', translation_result=output1)
-    # except:
-    #     # pronunciation_data = "-"
-    #     text = "{ERROR: We are not able to handle your request right now}"
-    #     # confidence = "-"
-    #     return render_template('text.html', translation_result=text)
+
+        # pronunciation_data = "-"
+        #text = "{ERROR: We are not able to handle your request right now}"
+        # confidence = "-"
+        # return render_template('text.html', translation_result=text)
     return render_template("text.html")
 
 
@@ -64,8 +64,8 @@ def home():
 
 # @app.route("/country")
 # def country():
-#     # if request.method == 'POST':
-#     #     try:
+#    if request.method == 'POST':
+#        try:
 #     #         count = request.form["select-translate"].lower()
 #     #         print(count)
 #     #         return render_template('Country-Language.html', Country_Lang=count)
@@ -93,7 +93,6 @@ def country():
             error = "Error not able to get country"
             return render_template('Country-Language.html', text_to_translate=error)
     return render_template('Country-Language.html')
-    # return render_template("Country-Language.html")
 
 
 @app.route("/profile")
@@ -104,7 +103,3 @@ def profile():
 @app.route("/text")
 def text():
     return render_template("Text.html")
-
-
-if __name__ == "__main__":
-    app.run("0.0.0.0", debug=True)
