@@ -15,7 +15,6 @@
     <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
         <div class="container"><a class="navbar-brand" href="#"><span>Language Translator</span> </a>
             <div class="collapse navbar-collapse" id="navcol-1"></div><a href="/text">Text</a>
-            <div class="navbar-collapse" id=""></div><a href="/document">Document</a>
             <div class="navbar-collapse" id=""></div><a href="/country">Country-Language</a>
             <div class="navbar-collapse" id=""></div><a href="/Feedback">Feedback</a>
         </div>
@@ -35,9 +34,38 @@
                     <form method="POST" class="justify-content-center" action="{{url_for('country')}}">
                         <!-- Enter text to translate. -->
                         <div class="form-group justify-content-center">
-                            <label for="country-to-translate"><strong>Enter the Country:</strong></label>
-                            <textarea class="form-control" name="country-to-translate" id="country-to-translate"
-                                rows="5"></textarea>
+                            <label for="select-language text-center"><strong>Select the Country:</strong></label>
+                            <select class="form-control" name="country-to-translate" id="country-to-translate">
+                                <option value="">Select Language</option>
+                                <option value="Afghanistan">Afghanistan</option>
+                                <option value="Albania">Albania</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="Andorra">Andorra</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Chile">Chile</option>
+                                <option value="China">China</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Dominica">Dominica</option>
+                                <option value="East Timor">East Timor</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Germany">Germany</option>
+                                <option value="India">India</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Iran">Iran</option>
+                                <option value="Israel">Israel</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Japan">Japan</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Singapore">Singapore</option>
+                            </select>
                         </div>
                         <!-- Select output language here. -->
                         <div class="form-group text-center">
