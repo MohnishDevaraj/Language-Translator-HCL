@@ -42,13 +42,19 @@ def document():
 @app.route("/country", methods=['POST', 'GET'])
 def country():
     if request.method == 'POST':
-        try:
-            count = request.form.get["country-to-translate"].lower()
-            print(count)
-            return render_template('Country-Language.html', text_to_translate=count)
-        except:
-            error = "Error not able to get country"
-            return render_template('Country-Language.html', text_to_translate=error)
+        # try:
+        #     count = request.form.get["country-to-translate"].lower()
+        #     print(count)
+        #     return render_template('Country-Language.html', text_to_translate=count)
+        # except:
+        #     error = "Error not able to get country"
+        #     return render_template('Country-Language.html', text_to_translate=error)
+        count = request.form["country-to-translate"]
+        if(count == "India"):
+            lang = "Hindi, English"
+        else:
+            lang = "Error"
+        return render_template('Country-Language.html', text_to_translate=lang)
     return render_template('Country-Language.html')
 
 
