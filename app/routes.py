@@ -24,11 +24,8 @@ def home():
         #output1 = browser.find_element_by_class_name("J0lOec").text
         # VIiyi
         # output1 = browser.find_element_by_xpath(
-        #    "/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[3]/c-wiz[2]/div[6]/div/div[1]/span[1]/span/span").text
-        output1 = browser.find_element_by_xpath(
-            "/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[3]/c-wiz[2]/div[6]/div/div[1]").text
-        print(output1)
-
+        #    "//html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[3]/c-wiz[2]/div[6]/div/div[1]/span[1]/span/span").text
+        output1 = browser.find_element_by_class_name("VIiyi").text
         return render_template('text.html', translation_result=output1)
 
     return render_template("text.html")
